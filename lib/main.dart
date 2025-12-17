@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:islami/screens/home/home_screen.dart';
+import 'package:islami/screens/intro/introduction_screen.dart';
 
 final GoRouter _router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
       builder: (context, state) => const HomeScreen(),
+    ),
+    GoRoute(
+      path: '/intro',
+      builder: (context, state) => const IntroductionScreen(),
     ),
   ],
 );
