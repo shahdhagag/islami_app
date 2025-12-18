@@ -1,20 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:islami/core/app_router.dart';
+import 'package:islami/core/app_theme.dart';
 import 'package:islami/screens/home/home_screen.dart';
-import 'package:islami/screens/intro/introduction_screen.dart';
 
-final GoRouter _router = GoRouter(
-  routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) =>  IntroScreen(),
-    ),
-    GoRoute(
-      path: '/home',
-      builder: (context, state) =>  HomeScreen(),
-    ),
-  ],
-);
 
 void main() {
   runApp(const MyApp());
@@ -27,11 +16,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routerConfig: _router,
+      routerConfig: AppRouter.router,
       title: 'islami App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      themeMode:ThemeMode.dark ,
+      darkTheme: AppTheme.darkTheme,
     );
   }
 }

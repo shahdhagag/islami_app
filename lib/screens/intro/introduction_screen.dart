@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami/core/app_colors.dart';
+import 'package:islami/core/app_router.dart';
 import 'package:islami/core/styles.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -90,7 +91,7 @@ class IntroScreen extends StatelessWidget {
       skip: Text("Skip",style: AppStyles.bodyStyle,),
       showSkipButton: true,
       onSkip: () {
-        GoRouter.of(context).push("/home");
+        GoRouter.of(context).push(AppRouter.homeScreen);
         // On button pressed
       },
       dotsDecorator: DotsDecorator(
@@ -114,7 +115,7 @@ class IntroScreen extends StatelessWidget {
       next: Text("Next",style: AppStyles.bodyStyle,),
       done: Text("Done",style: AppStyles.bodyStyle,),
       onDone: () {
-        GoRouter.of(context).push("/home");
+        GoRouter.of(context).push(AppRouter.homeScreen);
         // On button pressed
       },
     );
