@@ -7,11 +7,11 @@ final GoRouter _router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => const HomeScreen(),
+      builder: (context, state) =>  IntroScreen(),
     ),
     GoRoute(
-      path: '/intro',
-      builder: (context, state) => const IntroductionScreen(),
+      path: '/home',
+      builder: (context, state) =>  HomeScreen(),
     ),
   ],
 );
