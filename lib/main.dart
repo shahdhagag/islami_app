@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'islami App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        textTheme: TextTheme(),
       ),
       themeMode:ThemeMode.dark ,
       darkTheme: AppTheme.darkTheme,

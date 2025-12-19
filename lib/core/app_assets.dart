@@ -11,6 +11,14 @@ class AppAssets{
   static const String backgroundSebha= "assets/images/Backgroundsebha.png";
   static const String backgroundTime= "assets/images/Backgroundtime.png";
   static const String isalmiTop= "assets/images/introTop.png";
+  static const String searchIcon= "assets/images/quran-svgrepo-com 1.png";
+  static const String mostRecentImg= "assets/images/img_most_recent.png";
+  static const String frameImg= "assets/images/img_sur_number_frame.png";
+
+  static const String bottomDecoration= "assets/images/img_bottom_decoration.png";
+  static const String imgRight= "assets/images/img_right_corner.png";
+  static const String imgLift= "assets/images/img_left_corner.png";
+
 
 
 }

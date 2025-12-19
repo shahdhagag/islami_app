@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     AppAssets.backgroundTime,
   ];
 
-  List<Widget> tabsList= [
+  List<Widget> tabsList = [
     QuranTab(),
     HadethTab(),
     SebhaTab(),
@@ -34,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Stack(
       children: [
         Image.asset(
@@ -54,30 +55,33 @@ class _HomeScreenState extends State<HomeScreen> {
                   selectedIndex = index;
                 });
               },
-              selectedItemColor: AppColors.whiteColor,
-              unselectedItemColor: AppColors.blackColor,
               // backgroundColor: AppColors.primaryColor,
               // type: BottomNavigationBarType.fixed,
               items: [
                 buildBottomNavBarItem(
                   iconName: AppAssets.iconQuran,
                   label: "Quran",
+                  index: 0,
                 ),
                 buildBottomNavBarItem(
                   iconName: AppAssets.iconHadeth,
                   label: "Hadeth",
+                  index: 1,
                 ),
                 buildBottomNavBarItem(
                   iconName: AppAssets.iconSebha,
                   label: "Sebha",
+                  index: 2,
                 ),
                 buildBottomNavBarItem(
                   iconName: AppAssets.iconRadio,
                   label: "Radio",
+                  index: 3,
                 ),
                 buildBottomNavBarItem(
                   iconName: AppAssets.iconTime,
                   label: "Time",
+                  index: 4,
                 ),
               ],
             ),
@@ -86,10 +90,11 @@ class _HomeScreenState extends State<HomeScreen> {
             spacing: 20,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Image.asset(AppAssets.isalmiTop),
-              Expanded(
-                  child: tabsList[selectedIndex],
-              )
+              Image.asset(
+                AppAssets.isalmiTop,
+                height: height*0.16,
+              ),
+              Expanded(child: tabsList[selectedIndex]),
             ],
           ),
         ),
@@ -100,9 +105,19 @@ class _HomeScreenState extends State<HomeScreen> {
   BottomNavigationBarItem buildBottomNavBarItem({
     required String iconName,
     required String label,
+    required int index,
   }) {
     return BottomNavigationBarItem(
-      icon: ImageIcon(AssetImage(iconName)),
+      icon: selectedIndex == index
+          ? Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(66),
+                color: AppColors.blackbgColor,
+              ),
+              child: ImageIcon(AssetImage(iconName)),
+            )
+          : ImageIcon(AssetImage(iconName)),
       label: label,
     );
   }
