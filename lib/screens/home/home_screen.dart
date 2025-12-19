@@ -34,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     var height = MediaQuery.of(context).size.height;
     return Stack(
       children: [
@@ -119,6 +120,10 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           : ImageIcon(AssetImage(iconName)),
       label: label,
+=======
+    return Scaffold(
+      backgroundColor: Colors.red,
+>>>>>>> origin/development
     );
   }
 }

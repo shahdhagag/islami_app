@@ -13,8 +13,11 @@ dependencies:
   go_router: ^17.0.1
   gap: ^3.0.1
   flutter_native_splash: ^2.4.7
+<<<<<<< HEAD
   introduction_screen: ^4.0.0
   google_fonts: ^6.3.3
+=======
+>>>>>>> origin/development
 
 dev_dependencies:
   flutter_test:
