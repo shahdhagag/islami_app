@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami/core/app_colors.dart';
 import 'package:islami/core/app_router.dart';
+import 'package:islami/core/cache_helper.dart';
 import 'package:islami/core/styles.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -90,8 +91,9 @@ class IntroScreen extends StatelessWidget {
       showBackButton: true,
       skip: Text("Skip",style: AppStyles.bodyStyle,),
       showSkipButton: true,
-      onSkip: () {
-        GoRouter.of(context).push(AppRouter.homeScreen);
+      onSkip: () async{
+       await CacheHelper.saveBool("seenOnboarding", true);
+       context.go(AppRouter.homeScreen);
         // On button pressed
       },
       dotsDecorator: DotsDecorator(
@@ -114,8 +116,9 @@ class IntroScreen extends StatelessWidget {
 
       next: Text("Next",style: AppStyles.bodyStyle,),
       done: Text("Done",style: AppStyles.bodyStyle,),
-      onDone: () {
-        GoRouter.of(context).push(AppRouter.homeScreen);
+      onDone: ()async {
+        await CacheHelper.saveBool("seenOnboarding", true);
+        context.go(AppRouter.homeScreen);
         // On button pressed
       },
     );

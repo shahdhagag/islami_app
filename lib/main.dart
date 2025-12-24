@@ -4,9 +4,14 @@ import 'package:islami/core/app_router.dart';
 import 'package:islami/core/app_theme.dart';
 import 'package:islami/screens/home/home_screen.dart';
 
+import 'core/cache_helper.dart';
 
-void main() {
+
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper.init();
   runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
